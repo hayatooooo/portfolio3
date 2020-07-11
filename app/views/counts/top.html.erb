@@ -26,23 +26,23 @@
     <div class="col-md-4">
       <div class = "infoposition">
       <% if 5000<=@totalcount && @totalcount<=50000%>
-        <h3><span class="title">ランク：一般人</span></h3>
+        <h3 class="title">RANK 一般人</h3>
         <img src="/nomal.png" alt="">
 
       <% elsif 50000<@totalcount && @totalcount<=100000%>
-        <h3><span class="title">ランク：マッチョマン</span></h3>
+        <h3 class="title">RANK マッチョマン</h3>
         <img src="/bodybuilder.png" alt="">
 
       <% elsif 100000<@totalcount && @totalcount<=150000%>
-        <h3><span class="title">ランク：超マッチョマン</span></h3>
+        <h3 class="title">RANK 超マッチョマン</h3>
         <img src="/superbodybuilder.png" alt="">
 
       <% elsif 150000<@totalcount%>
-        <h3><span class="title">ランク：筋肉の神</span></h3>
+        <h3 class="title">RANK 筋肉の神</h3>
         <img src="/god.png" alt="">
-        
+
       <% else %>
-        <h3><span class="title">ランク：雑魚</span></h3>
+        <h3 class="title">RANK 雑魚</h3>
         <img src="/smallfish.png" alt="">
       <% end %>
       </div>
