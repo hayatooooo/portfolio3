@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'home#top'
+  root 'counts#top'
   devise_for :users
-
+  resources :counts
 end

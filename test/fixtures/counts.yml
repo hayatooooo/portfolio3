@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  count1: 1
+  count2: 1
+  count3: 1
+  count4: 1
+  count5: 1
+
+two:
+  user_id: 1
+  count1: 1
+  count2: 1
+  count3: 1
+  count4: 1
+  count5: 1

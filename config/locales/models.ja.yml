@@ -7,5 +7,11 @@ ja:
         password: パスワード
         password_confirmation: 確認用パスワード
         remember_me: 次回から自動的にログイン
+      count:
+        count1: 腕立て(回)
+        count2: クランチ(回)
+        count3: レッグレイズ(回)
+        count4: スクワット(回)
+        count5: プランク(秒)
   models:
     user: ユーザ

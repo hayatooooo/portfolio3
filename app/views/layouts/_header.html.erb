@@ -1,0 +1,8 @@
+<% if !current_user.nil? %>
+  <header class="navbar navbar-fixed-top navbar-inverse fixed-top" style="background: #000000;">
+    <a><li class="usernamecolor">ログインユーザー ： <%= current_user.name %></li><a>
+    <ul class="nav pull-right nav-pills"　style="background-color:#FFCC00;">
+      <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+    </ul>
+  </header>
+<% end %>
