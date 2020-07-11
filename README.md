@@ -1,24 +1,27 @@
-# README
+# 筋トレ回数記録アプリになります。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 開発環境
 
-Things you may want to cover:
+Windows10　×　Ubuntu(Windows Subsystem For Linux)　×　Docker Desktop　×　AWS(EC2)
 
-* Ruby version
+# 以下、機能になります。
 
-* System dependencies
+・Log in機能(devise gem 使用。名前とパスワードのみの簡易ログインに修正。)  
+・筋トレ回数記録  
+・回数に応じて、レーダーチャート、コメント、キャラクターが変化
 
-* Configuration
+# 以下、Javascript,Jquery使用箇所になります。
 
-* Database creation
+・Log inページ　アニメーション  
+・Sign upページ　アニメーション  
+・Topページ　レーダーチャート  
 
-* Database initialization
+# 以下、テストユーザーになります。
 
-* How to run the test suite
+・サンプルユーザー1  
+  name: 勇人  
+  password: password  
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+・サンプルユーザー2  
+  name: 慎太郎  
+  password: password
