@@ -14,15 +14,13 @@
  *= require_self
  */
 
-.center{
+.center {
   margin:  0 auto;
 }
 
-.color{
+.color {
   color: red;
 }
-
-
 
 input[type="number"] {
   width: 70px;
@@ -34,32 +32,32 @@ img {
   width: auto;
 }
 
-.formposition{
+.formposition {
   padding-top: 70px;
   margin-left: 10%;
 }
 
-.submitposition{
+.submitposition {
   margin-left: 30px;
   margin-bottom: 5px;
 }
 
-.raderposition{
+.raderposition {
   margin-top: 1%;
 }
 
-.infoposition{
+.infoposition {
   padding-top: 5%;
   padding-left: 35%;
   text-align: center;
 }
 
-.conentposition{
+.conentposition {
   padding-top: 1%;
   padding-left: 10%;
 }
 
-.usernamecolor{
+.usernamecolor {
   color: #FFCC00;
   list-style: none;
 }
@@ -104,13 +102,13 @@ img {
   z-index: 0;
 }
 
-.divcolor{
+.divcolor {
   background-color: rgba(255, 255, 255,0.8);
   margin-top: 100px;
   padding: 30px 40px 20px 40px;
 }
 
-.maintitle{
+.maintitle {
   margin-top: 2%;
   color: #FFCC00;
   font-size:90px;
@@ -118,7 +116,7 @@ img {
   font-weight: 900;
 }
 
-.subtitle{
+.subtitle {
   margin-top: 2%;
   color: #FFCC00;
   font-size:25px;

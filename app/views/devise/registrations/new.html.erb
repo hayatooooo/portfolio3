@@ -1,5 +1,7 @@
 <body class = "homebackgroundcolor">
+  <!--canvas→JavaScriptを組み合わせて図形を描画-->
   <canvas class="background"></canvas>
+  <!--アニメーション-->
   <%= javascript_include_tag('animetion.js') %>
   <div class="row">
     <div class="col-md-5 align-self-center divcolor center">
@@ -16,22 +18,22 @@
           <em>(<%= @minimum_password_length %> 文字以上)</em>
           <% end %><br />
           <%= f.password_field :password, autocomplete: "new-password" %>
-          </div><br/>
-          <div class="field">
-            <%= f.label :password_confirmation %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-          </div><br/>
-          <div class="actions">
-            <%= f.submit "Sign up",class:"btn btn-primary" %>
-          </div>
-        <% end %><br/>
-        <%= render "devise/shared/links" %>
-      </div>
+        </div><br/>
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div><br/>
+        <div class="actions">
+          <%= f.submit "Sign up",class:"btn btn-primary" %>
+        </div>
+      <% end %><br/>
+      <%= render "devise/shared/links" %>
     </div>
+  </div>
   <div class="row">
     <div class="col-md-5 center">
-    <h1 class="subtitle">日々の筋トレの回数を記録しよう！</br>
-    回数に応じてレーダーチャート、キャラクター、コメントが変化するよ！</h1>
+      <h1 class="subtitle">日々の筋トレの回数を記録しよう！</br>
+      回数に応じてレーダーチャート、キャラクター、コメントが変化するよ！</h1>
     </div>
   </div>
 </body>

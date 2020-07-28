@@ -1,4 +1,4 @@
-# 筋トレ回数記録アプリになります。
+# 筋トレ回数記録アプリになります。※Chrome推奨
 
 # 開発環境
 
@@ -16,8 +16,7 @@ Windows10　×　Ubuntu(Windows Subsystem For Linux)　×　Docker Desktop　×�
 
 # 以下、Javascript,Jquery使用箇所になります。
 
-・Log inページ　アニメーション  
-・Sign upページ　アニメーション  
+・Log in/Sign upページ　アニメーション  
 ・Topページ　レーダーチャート  
 
 # 以下、テストユーザーになります。

@@ -2,6 +2,7 @@ class CountsController < ApplicationController
   before_action :authenticate_user!
 
   def top
+    #初回ログイン時、ログインユーザーのCountレコードを作成する。
     if Count.find_by(user_id: current_user.id).nil?
       @createcount = Count.new(user_id: current_user.id,count1: 0,count2: 0,count3: 0,count4: 0,count5: 0)
       @createcount.save
@@ -15,7 +16,9 @@ class CountsController < ApplicationController
     gon.count3=@count.count3
     gon.count4=@count.count4
     gon.count5=@count.count5
+    #Countの合計値
     @totalcount = @count.count1+@count.count2+@count.count3+@count.count4+@count.count5
+    #Countを配列に入れておく
     @arraycount=[@count.count1,@count.count2,@count.count3,@count.count4,@count.count5]
   end
 

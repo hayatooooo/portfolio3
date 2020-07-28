@@ -2,119 +2,74 @@
   <div class="row formposition">
     <div class="col-md15 ">
       <%= form_for(@count) do |f| %>
-
       <%= f.label :count1%>
       <%= f.number_field :count1 ,min:0 ,max:50000 %>
-
       <%= f.label :count2%>
       <%= f.number_field :count2 ,min:0 ,max:50000 %>
-
       <%= f.label :count3%>
       <%= f.number_field :count3 ,min:0 ,max:50000 %>
-
       <%= f.label :count4%>
       <%= f.number_field :count4 ,min:0 ,max:50000 %>
-
       <%= f.label :count5%>
       <%= f.number_field :count5 ,min:0 ,max:50000 %>
-
       <%= f.submit class: "btn btn-primary btntextsize submitposition" %>
       <% end %>
     </div>
   </div>
   <div class="row">
     <div class="col-md-4">
+      <!--RANKとイメージをtotalcountの値によって変化-->
       <div class = "infoposition">
-      <% if 5000<=@totalcount && @totalcount<=50000%>
-        <h3 class="title">RANK 一般人</h3>
-        <img src="/nomal.png" alt="">
-
-      <% elsif 50000<@totalcount && @totalcount<=100000%>
-        <h3 class="title">RANK マッチョマン</h3>
-        <img src="/bodybuilder.png" alt="">
-
-      <% elsif 100000<@totalcount && @totalcount<=150000%>
-        <h3 class="title">RANK 超マッチョマン</h3>
-        <img src="/superbodybuilder.png" alt="">
-
-      <% elsif 150000<@totalcount%>
-        <h3 class="title">RANK 筋肉の神</h3>
-        <img src="/god.png" alt="">
-
-      <% else %>
-        <h3 class="title">RANK 雑魚</h3>
-        <img src="/smallfish.png" alt="">
-      <% end %>
+        <% if 5000<=@totalcount && @totalcount<=50000%>
+          <h3 class="title">RANK 一般人</h3>
+          <img src="/nomal.png" alt="">
+        <% elsif 50000<@totalcount && @totalcount<=100000%>
+          <h3 class="title">RANK マッチョマン</h3>
+          <img src="/bodybuilder.png" alt="">
+        <% elsif 100000<@totalcount && @totalcount<=150000%>
+          <h3 class="title">RANK 超マッチョマン</h3>
+          <img src="/superbodybuilder.png" alt="">
+        <% elsif 150000<@totalcount%>
+          <h3 class="title">RANK 筋肉の神</h3>
+          <img src="/god.png" alt="">
+        <% else %>
+          <h3 class="title">RANK 雑魚</h3>
+          <img src="/smallfish.png" alt="">
+        <% end %>
       </div>
     </div>
     <div class="col-md-8 raderposition">
-    <canvas id="myRaderChart"></canvas>
-    <script>
-    var v=0;
-    var ctx = document.getElementById("myRaderChart");
-    var myRadarChart = new Chart(ctx, {
-    type: 'radar',
-    data: {
-        labels: ["腕立て(回)", "クランチ(回)", "レッグレイズ(回)", "スクワット(回)", "プランク(秒)"],
-        datasets: [{
-          label: gon.username,
-            data: [gon.count1, gon.count2, gon.count3, gon.count4, gon.count5],
-            backgroundColor: 'RGBA(255,200,0, 0.7)',
-            borderColor: 'RGBA(255,200,0, 1)',
-            borderWidth: 1,
-            pointBackgroundColor: 'rgba(0,0,0,1)'
-        }]
-    },
-    options: {
-        title: {
-            display: true,
-            text: 'ステータス'
-        },
-        scale:{
-            ticks:{
-                suggestedMin: 0,
-                suggestedMax: 36000,
-                stepSize: 3000,
-                callback: function(value, index, values){
-                    return  value
-                    }
-                  }
-              }
-        }
-    });
-    </script>
+      <!--canvas→JavaScriptを組み合わせて図形を描画-->
+      <canvas id="myRaderChart"></canvas>
+      <!--レーダーチャート-->
+      <%= javascript_pack_tag 'rederchart' %>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
       <div class="conentposition">
-      <% if @count.count1==@count.count2 && @count.count2==@count.count3 && @count.count3==@count.count4 && @count.count4==@count.count5 %>
-      <h5 class="coment">バランスイイね！その調子！</h5>
-      <% flg=1 %>
-      <% end %>
-
-      <% if flg!=1%>
-      <% end %>
-
-      <% if @arraycount.max == @count.count1 && flg!=1%>
-      <h5 class="coment">腕立てが多いようだ！バランスよく！</h5>
-      <% end %>
-
-      <% if  @arraycount.max == @count.count2 && flg!=1%>
-      <h5 class="coment">クランチが多いようだ！バランスよく！</h5>
-      <% end %>
-
-      <% if  @arraycount.max == @count.count3 && flg!=1%>
-      <h5 class="coment">レッグレイズが多いようだ！バランスよく！</h5>
-      <% end %>
-
-      <% if  @arraycount.max == @count.count4 && flg!=1%>
-      <h5 class="coment">スクワットが多いようだ！バランスよく！</h5>
-      <% end %>
-
-      <% if  @arraycount.max == @count.count5 && flg!=1%>
-      <h5 class="coment">プランクが多いようだ！バランスよく！</h5>
-      <% end %>
+        <!--コメントを変化-->
+        <% if @count.count1==@count.count2 && @count.count2==@count.count3 && @count.count3==@count.count4 && @count.count4==@count.count5 %>
+          <h5 class="coment">バランスイイね！その調子！</h5>
+          <% flg = 1 %>
+        <% end %>
+        <% if flg! = 1 %>
+        <% end %>
+        <% if @arraycount.max == @count.count1 && flg! = 1 %>
+          <h5 class="coment">腕立てが多いようだ！バランスよく！</h5>
+        <% end %>
+        <% if  @arraycount.max == @count.count2 && flg!= 1 %>
+          <h5 class="coment">クランチが多いようだ！バランスよく！</h5>
+        <% end %>
+        <% if  @arraycount.max == @count.count3 && flg! = 1%>
+          <h5 class="coment">レッグレイズが多いようだ！バランスよく！</h5>
+        <% end %>
+        <% if  @arraycount.max == @count.count4 && flg! = 1 %>
+          <h5 class="coment">スクワットが多いようだ！バランスよく！</h5>
+        <% end %>
+        <% if  @arraycount.max == @count.count5 && flg! = 1 %>
+          <h5 class="coment">プランクが多いようだ！バランスよく！</h5>
+        <% end %>
       </div>
     </div>
   </div>
