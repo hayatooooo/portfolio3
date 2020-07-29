@@ -1,21 +1,29 @@
+#docker-composeのバージョン
 version: '3'
+#この下のハッシュにサービスを作る。webとdbが一般的
 services:
   db:
+    #使用するimage
+    #Docker コンテナの実行に必要な概念としてのパッケージ（ファイルやメタ情報の集合体）
     image: mysql:5.7
     environment:
       MYSQL_USER: root
       MYSQL_ROOT_PASSWORD: password
     ports:
       - "3306:3306"
+    #ディレクトリのマウント設定（dbデータなどを残せる）
+    #volumes→データを永続化できる場所
     volumes:
       - ./db/mysql/volumes:/var/lib/mysql
 
   web:
+    #Dockerfiletなどがあるパス（基本的にカレントディレクトリ）
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - .:/myapp
     ports:
       - "80:3000"
+    #依存関係を示している。db→webへと起動
     depends_on:
       - db

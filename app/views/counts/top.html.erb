@@ -1,35 +1,35 @@
 <div class="container-fluid">
   <div class="row formposition">
-    <div class="col-md15 ">
+    <div class="col-md15">
       <%= form_for(@count) do |f| %>
-      <%= f.label :count1%>
-      <%= f.number_field :count1 ,min:0 ,max:50000 %>
-      <%= f.label :count2%>
-      <%= f.number_field :count2 ,min:0 ,max:50000 %>
-      <%= f.label :count3%>
-      <%= f.number_field :count3 ,min:0 ,max:50000 %>
-      <%= f.label :count4%>
-      <%= f.number_field :count4 ,min:0 ,max:50000 %>
-      <%= f.label :count5%>
-      <%= f.number_field :count5 ,min:0 ,max:50000 %>
-      <%= f.submit class: "btn btn-primary btntextsize submitposition" %>
+        <%= f.label :count1%>
+        <%= f.number_field :count1 ,min:0 ,max:50000 %>
+        <%= f.label :count2%>
+        <%= f.number_field :count2 ,min:0 ,max:50000 %>
+        <%= f.label :count3%>
+        <%= f.number_field :count3 ,min:0 ,max:50000 %>
+        <%= f.label :count4%>
+        <%= f.number_field :count4 ,min:0 ,max:50000 %>
+        <%= f.label :count5%>
+        <%= f.number_field :count5 ,min:0 ,max:50000 %>
+        <%= f.submit class: "btn btn-primary btntextsize submitposition" %>
       <% end %>
     </div>
   </div>
   <div class="row">
     <div class="col-md-4">
       <!--RANKとイメージをtotalcountの値によって変化-->
-      <div class = "infoposition">
-        <% if 5000<=@totalcount && @totalcount<=50000%>
+      <div class="infoposition">
+        <% if 5000 <= @totalcount && @totalcount <= 50000 %>
           <h3 class="title">RANK 一般人</h3>
           <img src="/nomal.png" alt="">
-        <% elsif 50000<@totalcount && @totalcount<=100000%>
+        <% elsif 50000 < @totalcount && @totalcount <= 100000 %>
           <h3 class="title">RANK マッチョマン</h3>
           <img src="/bodybuilder.png" alt="">
-        <% elsif 100000<@totalcount && @totalcount<=150000%>
+        <% elsif 100000 < @totalcount && @totalcount <= 150000 %>
           <h3 class="title">RANK 超マッチョマン</h3>
           <img src="/superbodybuilder.png" alt="">
-        <% elsif 150000<@totalcount%>
+        <% elsif 150000 < @totalcount %>
           <h3 class="title">RANK 筋肉の神</h3>
           <img src="/god.png" alt="">
         <% else %>
@@ -42,7 +42,7 @@
       <!--canvas→JavaScriptを組み合わせて図形を描画-->
       <canvas id="myRaderChart"></canvas>
       <!--レーダーチャート-->
-      <%= javascript_pack_tag 'rederchart' %>
+      <%= javascript_pack_tag "raderchart" %>
     </div>
   </div>
   <div class="row">
@@ -61,7 +61,7 @@
         <% if  @arraycount.max == @count.count2 && flg!= 1 %>
           <h5 class="coment">クランチが多いようだ！バランスよく！</h5>
         <% end %>
-        <% if  @arraycount.max == @count.count3 && flg! = 1%>
+        <% if  @arraycount.max == @count.count3 && flg! = 1 %>
           <h5 class="coment">レッグレイズが多いようだ！バランスよく！</h5>
         <% end %>
         <% if  @arraycount.max == @count.count4 && flg! = 1 %>

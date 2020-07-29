@@ -9,22 +9,36 @@
 # And be sure to use new-style password hashing:
 #   https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
 #
+
+#アンカー。名前付け
 default: &default
+  #使用するデータベース種類
   adapter: mysql2
+  #文字コード
   encoding: utf8
+  #コネクションプーリングで使用するコネクションの上限
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password: password
+  #MySQLが動作しているホスト名
   host: db
 
+#開発環境
 development:
+  #エイリアス。アンカーを付けたものを呼び出す
+  #<<:→右側にあるものを、該当部にまとめるという意味
   <<: *default
+  #データベース名
   database: myapp_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
+
+#テスト環境
 test:
+  #エイリアス。アンカーを付けたものを呼び出す
+  #<<:→右側にあるものを、該当部にまとめるという意味
   <<: *default
   database: myapp_test
 
@@ -47,8 +61,13 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+
+#本番環境
 production:
+  #エイリアス。アンカーを付けたものを呼び出す
+  #<<:→右側にあるものを、該当部にまとめるという意味
   <<: *default
+  #MySQLが動作しているホスト名
   host: database-1.ctw0so87obh9.ap-northeast-1.rds.amazonaws.com
   database: admin
   username: admin
